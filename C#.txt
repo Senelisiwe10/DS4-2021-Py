@@ -1,0 +1,54 @@
+using System;
+
+namespace RectangleApp
+{
+    public class Rectangle
+    {
+
+        public double length;
+        public double width;
+
+        public Rectangle(double l, double w)
+        {
+            length = l;
+            width = w;
+        }
+        public void input_attribute()
+        {
+            Console.WriteLine("enter length of a rectangle:");
+            length = Convert.ToDouble(Console.ReadLine());
+            Console.WriteLine("enter width of a rectangle:");
+            width = Convert.ToDouble(Console.ReadLine());
+
+        }
+        public void output_result()
+        {
+            Console.WriteLine("the area of a rectangle is:" + Area());
+            Console.WriteLine("the perimeter of a rectangle is:" + Perimeter());
+        }
+
+        public double Area()
+        {
+            double area = length * width;
+            return area;
+        }
+        public double Perimeter()
+        {
+            double perimeter = 2 * (length + width);
+            return perimeter;
+        }
+
+
+        class Program
+        {
+            static void Main(string[] args)
+            {
+                Rectangle r1 = new Rectangle(4, 2);
+                r1.output_result();
+                Rectangle r2 = new Rectangle(0, 0);
+                r2.input_attribute();
+                r2.output_result();
+            }
+        }
+    }
+}
